@@ -1,0 +1,39 @@
+.navbar {
+    height: 110px;
+    background: black;
+    text-align: center;
+    border-bottom: 2px solid #CC5454;
+}
+
+#headerImg {
+    height: 200px;
+    width: 400px;
+    margin: -50px;
+}
+
+.seriesList {
+    margin-top: -20px;
+    /* height: 320px; */
+    color: inherit;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.topSeries {
+    margin-left: -12px;
+}
+
+.series {
+    width: 170px;
+    background: black;
+    color: #eee;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.search-bar {
+    border: 2px solid #CC5454;
+    padding: 10px;
+    /* margin-top: 0px; */
+}
