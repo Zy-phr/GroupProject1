@@ -1,16 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <!-- Linking Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <meta charset="UTF-8">
+    <title>Smash series</title>
+    <meta name="google-signin-client_id" content="167602757568-k6027cugtilquc0nh7oal29icsbs44ov.apps.googleusercontent.com">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-scope" content="profile email">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/images/smash-icon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  
 </head>
 <body>
+
+    <!--header using NavBar from Bootstrap-->
+    <nav class="navbar fixed-top">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12";>
+                <img id="headerImg" class="img-fluid" src="assets/images/smash-logo.png" alt="Smash series" width="200px">
+            </div>
+        </div>
+    </nav>
+
+    <!--Favorite T.V. Series List -->
+    <div class="seriesList">
+
+        <div id="seriesOptions">
+
+            <div class="panel-body table-responsive">
+
+                <table class="topSeries">
+                    <thead>
+                    
+                        <th class="series"><img src="assets/images/theBigBangTheory.png" width="170px" height="250px" alt="The Big Bang Theory">
+                            <p>The Big Bang Theory</p>
+                            <p>2007</p>
+                        </th>
+                
+                        <th class="series"><img src="assets/images/siliconValley.png" width="170px" height="250px" alt="Silicon Valley">
+                            <P>Silicon Valley</P>
+                            <p>2014</p>
+                        </th>
+                
+                        <th class="series"><img src="assets/images/rickAndMorty.png" width="170px" height="250px" alt="Rick and Morty">
+                            <p>Rick and Morty</p>
+                            <p>2013</p>
+                        </th>
+                
+                        <th class="series"><img src="assets/images/peakyBlinders.png" width="170px" height="250px" alt="Peaky Blinders">
+                            <p>Peaky Blinders</p>
+                            <p>2013</p>
+                        </th>
+            
+                        <th class="series"><img src="assets/images/gameOfThrones.png" width="170px" height="250px" alt="Game of Thrones">
+                            <p>Game of Thrones</p>
+                            <p>2011</p>
+                        </th>
+                
+                        <th class="series"><img src="assets/images/walkingDead.png" width="170px" height="250px" alt="The Walking Dead">
+                            <p>The Walking Dead</p>
+                            <p>2010</p>
+                        </th>
+                        
+                        <th class="series"><img src="assets/images/strangerThings.png" width="170px" height="250px" alt="Stranger Things">
+                            <p>Stranger Things</p>
+                            <p>2016</p>
+                        </th>
+
+                    </thead>
+                </table>
+
+            </div>
+
+        </div>
     
+    </div>
+    
+    <div class="search-bar">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12";>
+                <section class="search">
+                <div class="sub_media">
+                    <form id="search_form" action="/search" method="get" accept-charset="utf-8">
+                    
+                        <span tabindex="-1" role="presentation" class="k-widget k-autocomplete k-header k-autocomplete-clearable k-state-default" style="">
+                            <input dir="auto" id="search_v4" name="query" type="text" tabindex="2" autocorrect="off" autofill="off" autocomplete="off" spellcheck="false" placeholder="Search for a T.V. Series" value="" data-role="autocomplete" class="k-input" role="textbox" aria-haspopup="true" aria-disabled="false" aria-readonly="false" aria-owns="search_v4_listbox" aria-autocomplete="list" aria-expanded="true" aria-busy="false">
+                            <span unselectable="on" class="k-icon k-clear-value k-i-close k-hidden" title="clear" role="button" tabindex="-1"></span>
+                            <span class="k-icon k-i-loading" style="display:none"></span>
+                        </span>
+
+                    <input type="submit">
+                    </form>
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="col-sm-12 col-md-9">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Current Train Schedule</h2>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th class="text-center">Train Name</th>
+                            <th class="text-center">Destination</th>
+                            <th class="text-center">Frequency (min)</th>
+                            <th class="text-center">Next Arrival</th>
+                            <th class="text-center">Minutes Away</th>
+                            <th class="text-center">Edit Train</th>
+                        </thead>
+                        
+                        <tbody class="text-center">
+
+                        </tbody>
+                    
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-content">
+            <div class="col-sm-12 col-md-3">
+                <div class="panel">
+                    <div class="panel-heading">
+                    <h2 class="panel-title">Add Train</h2>
+                    </div>
+                    <div class="panel-body">
+
+                        <form>
+
+                            <div class="form-group">
+                                <label for="trainName">Train Name</label>
+                                <input type="text" class="form-control" id="trainName" placeholder="Train Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="trainDestination">Destination</label>
+                                <input type="text" class="form-control" id="trainDestination" placeholder="Destination">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstTrain">First Train Time<br/><small>(HH:mm Military Time)</small></label>
+                                <input type="text" class="form-control" id="firstTrain" placeholder="First Train Time">
+                            </div>
+
+                            <fieldset disabled>
+                            <div class="form-group hidden">
+                                <label for="trainKey">Train Key</label>
+                                <input type="text" id="trainKey" class="form-control" placeholder="Disabled input">
+                            </div>
+
+                            </fieldset>
+                            <div class="form-group">
+                                <label for="trainFrequency">Frequency (min)</label>
+                                <input type="text" class="form-control" id="trainFrequency" placeholder="Frequency">
+                            </div>
+                    
+                            <button type="submit" class="btn submit">Submit</button>
+                            <button type="reset" class="btn reset">Clear</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </body>
 </html>
