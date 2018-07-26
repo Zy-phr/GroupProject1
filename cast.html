@@ -19,7 +19,7 @@
     <!--Link Personal CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!--Link Firebase JS -->
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
 
 </head>
 
@@ -57,32 +57,11 @@
             </div>
         </div>
     </div>
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <div id="custom-search-input">
-            <form id="searchForm">
-                <div class="input-group col-md-12">
-                    <input type="text" class="search-query form-control" id="searchText" placeholder="Search for T.V. Series" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-danger" id="searchbtn" type="button" style="width: 80px;">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <div class="guide-body table-responsive">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-                <iframe width="100%" height="200px" src="https://titantv.com/Default.aspx?r=t" frameborder="0" allowfullscreen></iframe>
-                <!-- <iframe width="100%" height="200px" src="https://www.tvguide.com/listings/" frameborder="0" allowfullscreen></iframe> -->
-            </div>
-        </div>
-    </div>
 
+    <!--Actor Container -->
     <div class="container">
-        <div id="tvShow" class="row"></div>
+        <div id="actor" class="well"></div>
     </div>
-
 
     <!--Foooter-->   
     <footer id="mainFooter" class="text-light fixed-bottom">
@@ -95,14 +74,13 @@
             </div>
     </footer>
 
-
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
-    </script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // getActor();
+    </script>
 
 </body>
 
@@ -111,5 +89,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<!--Link Personal JS -->
 <script type="text/javascript" src="assets/javascript/script.js"></script>
+
 </html>
