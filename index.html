@@ -29,18 +29,26 @@
     <header id="mainHeader" class="text-light fixed-top">
         <div class="container">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <!-- <button type="button" class="btn btn-danger" id="signIN"><i class="fa fa-google-plus"></i> Sign-In </button> -->
                 <a href="index.html">
                 <img id="headerImg" class="img-fluid" src="assets/images/smash-logo.png" alt="Smash series" width="200px">
                 </a>
-                <!-- <button class="text-center btn btn-danger signIn" id="signIN">Sign In</button> -->
-                <button type="button" class="signIn" onclick="googleSignIn()">Google Sign In</button>
+                <button type="button" class="signIn" onclick="googleSignIn()">
+                    <img id="G-Img" class="img-fluid" src="assets/images/images.png" alt="google"> Sign In</button>
                 <br>
-                <button type="button" class="signOut" onclick="googleSignOut()">Google Sign Out</button>
+                <button type="button" class="signOut" onclick="googleSignOut()">
+                    <img id="G-Img" class="img-fluid" src="assets/images/images.png" alt="google"> Sign Out</button>
             </div>
         </div>
     </header>
     <br>
+    <!--Intro video on lock paged-->
+    <div class="video">
+        <div class="col-lg-12">
+            <video autoplay loop muted width="100%" height="100%" controls>
+                    <source src="assets/media/stock-footage-neon-hot-girls-sign-neon-live-nudes-sign.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
     <!--Favorite T.V. Series List -->
     <div class="seriesList">
         <div id="seriesOptions">
@@ -64,7 +72,7 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="search-query form-control" id="searchText" placeholder="Search for T.V. Series" />
                     <span class="input-group-btn">
-                        <button class="btn btn-danger" id="searchbtn" type="button" style="width: 80px;">
+                        <button class="btn btn-danger" id="searchbtn" type="submit" style="width: 80px;">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
@@ -73,7 +81,7 @@
         </div>
         <div class="guide-body table-responsive">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-                <iframe width="100%" height="200px" src="https://titantv.com/Default.aspx?r=t" frameborder="0" allowfullscreen></iframe>
+                <!-- <iframe width="100%" height="200px" src="https://titantv.com/Default.aspx?r=t" frameborder="0" allowfullscreen></iframe> -->
                 <!-- <iframe width="100%" height="200px" src="https://www.tvguide.com/listings/" frameborder="0" allowfullscreen></iframe> -->
             </div>
         </div>
@@ -89,7 +97,7 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-xs-12 col-lg-12">
-                        <small>Richard Sanchez | Kitt Livingston | Erick Casco | Ahmad Afzaal | Copyright &copy; 2018</small>
+                        <small>Richard Sanchez | Kitt Livingston <br> Copyright &copy; 2018</small>
                     </div>
                 </div>
             </div>

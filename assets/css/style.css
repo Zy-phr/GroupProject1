@@ -15,25 +15,40 @@ body {
 button {
     float: right;
     display: inline;
-    background: #CC5454;
-    color: #eee;
+    background: #eee;
+    color: #CC5454;
+    border-radius: 8px;
 }
 
 button:hover {
     transform: scale(1.1);
 }
 
+#G-Img {
+    width: 20px;
+    float: left;
+    border-radius: 30px;
+    margin: 0 6px 0 0;
+}
+
 .signIn {
-    margin-top: 7px;
+    margin-top: 20px;
+    border-radius: 8px;
+    float: right;
+    border: 2px solid #CC5454;
 }
 
 .signOut {
-    margin-top: -27px;
+    border-radius: 8px;
+    float: right;
+    border: 2px solid #CC5454;
 }
+
 
 #headerImg {
     height: 65px;
     width: 200px;
+    float: left;
 }
 
 #headerImg:hover {
@@ -213,7 +228,7 @@ Footer
 */
 
 footer {
-    padding: 5px;
+    padding: 2px;
     background: black;
     border-top: 2px solid #CC5454;
 }
@@ -222,6 +237,6 @@ footer small {
     margin: 0;
     color: #eee;
     font-size: 0.7em;
-    padding: 5px 0;
+    padding: 2px 0;
     text-align: center;
 }

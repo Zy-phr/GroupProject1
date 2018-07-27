@@ -23,7 +23,6 @@ Initialize Firebase
 ===================================== 
 */
 
-
 var config = {
   apiKey: "AIzaSyDW96BlZ6-mDMsZKstfIbEQoODgvf1gyxc",
   authDomain: "smash-tv-series.firebaseapp.com",
@@ -37,14 +36,33 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
 /* 
 =====================================
 Firebase Google Sign In/Out Auth
 ===================================== 
 */
 
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        // User is signed in.
+        $('.signIn').hide();
+        $('.signOut').show();
+        $('.video').hide();
+        $('.seriesList').show();
+        $('.search-bar').show();
+        
+    } else {
+        // No user is signed in.
+        $('.signOut').hide();
+        $('.seriesList').hide();
+        $('.search-bar').hide();
+        
+    }
+
+});
+
 var provider = new firebase.auth.GoogleAuthProvider();
+// var userId = firebase.auth().currentUser.uid;
 function googleSignIn() {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         var token = result.credential.accessToken;
@@ -53,6 +71,7 @@ function googleSignIn() {
         console.log("Signed In")
         // console.log(user);
         console.log(displayName);
+
     }).catch(function() {
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -64,7 +83,15 @@ function googleSignIn() {
 function googleSignOut() {
     firebase.auth().signOut()
     .then(function() {
-        console.log("Signed Out Succesfull")
+        console.log("Signed Out")
+
+        $('.signOut').hide();
+        $('.seriesList').hide();
+        $('.search-bar').hide();
+        $('.signIn').show();
+        $('.video').show();
+        window.location = '/';
+
     },function(error) {
         console.log("Signed Out Failed")
     });
