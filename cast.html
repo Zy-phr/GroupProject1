@@ -27,19 +27,28 @@
 
     <!--header using NavBar from Bootstrap-->
     <header id="mainHeader" class="text-light fixed-top">
-            <div class="container">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <a href="index.html">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-md-10">
+                    <a href="search.html">
                     <img id="headerImg" class="img-fluid" src="assets/images/smash-logo.png" alt="Smash series" width="200px">
                     </a>
-                    <button type="button" class="signIn" onclick="googleSignIn()">
-                        <img id="G-Img" class="img-fluid" src="assets/images/images.png" alt="google"> Sign In</button>
-                    <br>
+                </div>
+                <div class="col-md-2">
                     <button type="button" class="signOut" onclick="googleSignOut()">
-                        <img id="G-Img" class="img-fluid" src="assets/images/images.png" alt="google"> Sign Out</button>
+                    <img id="G-Img" class="img-fluid" src="assets/images/images.png" alt="google">Sign Out</button>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Menu</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="search.html">Search</a>
+                            <a href="tvGuide.html">T.V. Guide</a>
+                            <a href="contact.html">Contact Us</a>
+                        </div>
+                    </div> 
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
     <br>
     <!--Favorite T.V. Series List -->
     <div class="seriesList">
@@ -78,9 +87,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        // getActor();
-    </script>
 
 </body>
 

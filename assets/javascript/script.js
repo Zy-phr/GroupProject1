@@ -2,7 +2,7 @@ var welcomeMessage = [
     "=====================================",
     "",
     "=====================================",
-    "WELCOME TO SMASH TV SERIES",
+          "WELCOME TO SMASH TV SERIES",
     "=====================================",
     "",
     "====================================="];
@@ -55,8 +55,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         // No user is signed in.
         $('.signOut').hide();
         $('.seriesList').hide();
-        $('.search-bar').hide();
-        
+        $('.search-bar').hide();   
     }
 
 });
@@ -71,6 +70,9 @@ function googleSignIn() {
         console.log("Signed In")
         // console.log(user);
         console.log(displayName);
+
+        window.location = 'search.html';
+        return false;
 
     }).catch(function() {
         var errorCode = error.code;
@@ -96,6 +98,33 @@ function googleSignOut() {
         console.log("Signed Out Failed")
     });
 };
+
+/* 
+=====================================
+Dropdown menu
+===================================== 
+*/
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("display");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('display')) {
+        openDropdown.classList.remove('display');
+      }
+    }
+  }
+}
 
 /* 
 =====================================
@@ -133,7 +162,6 @@ function popularSeries() {
         var tvSeries = tvseries[i];
         console.log(tvSeries);
 
-
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -147,7 +175,7 @@ function popularSeries() {
             // console.log(response);
             console.log(response);
 
-            var tRow = $("tr");
+            var tRow = $(".popular");
             var tContent = $("<td>");
             tContent.attr("id", "series" + i);
             var tvseriesPoster = $("<img>");
@@ -245,7 +273,7 @@ function getShow() {
                         <img src="${image_path + show.networks[0].logo_path}" class="network-logo">
                         <a href="http://imdb.com/title/${show.external_ids.imdb_id}" target="_blank" class="btn btn-warning">IMDb</a> 
                         <a href="https://www.facebook.com/${show.external_ids.facebook_id}" target="_blank" class="btn btn-primary">Facebook</a>
-                        <a href="index.html" class="btn btn-danger">Back to Search</a>
+                        <a href="search.html" class="btn btn-danger">Back to Search</a>
                         </h2> 
                       
                         <ul class="list-group">
@@ -266,7 +294,6 @@ function getShow() {
                         <h3>Plot</h3>
                             ${show.overview}   
                     </div>
-
                 
             `;
 
@@ -386,7 +413,7 @@ function getActor() {
                         <p></p>
                         <a href="https://www.imdb.com/name/${actor.imdb_id}" target="_blank" class="btn btn-warning">IMDb</a> 
                         <a href="tvSeries.html" class="btn btn-success">Back to T.V. Series Details</a>
-                        <a href="index.html" class="btn btn-danger">Back to Search</a>
+                        <a href="search.html" class="btn btn-danger">Back to Search</a>
                         </h2> 
                       
                         <ul class="list-group">
@@ -403,7 +430,6 @@ function getActor() {
                         <h3>Bio</h3>
                             ${actor.biography}   
                     </div>
-
             `;
 
             $("#actor").html(output);
@@ -423,3 +449,62 @@ $('#signIN').on('click',function(event){
 });
 
 getActor();
+
+/* 
+=====================================
+Contact.html
+===================================== 
+*/
+
+// Variables
+var database = firebase.database();
+var firstName = "";
+var lastName = "";
+var email = "";
+var favorite = "";
+var message = "";
+
+
+// Capture Button Click
+$("#add-comment").on("click", function (event) {
+    event.preventDefault();
+
+    // Grabbed values from text-boxes
+    firstName = $("#fName-input").val().trim();
+    lastName = $("#lName-input").val().trim();
+    email = $("#email-input").val().trim();
+    favorite = $("#favorite-input").val().trim();
+    message = $("#message-input").val().trim();
+
+    // Code for "Pushing values in the database"
+    database.ref().child('contact').push({
+        FirstName: firstName,
+        LastName: lastName,
+        Email: email,
+        FavoriteSeries: favorite,
+        Message: message,
+    });
+});
+
+// Reference Firebase when page loads and train added to firebase
+database.ref().child('contact').on('value', function (snapshot) {
+    $('tbody').empty();
+
+    snapshot.forEach(function (childSnapshot) {
+        console.log(childSnapshot.val());
+        var cContact = childSnapshot.val();
+        var cClass = "comment" + childSnapshot.key;
+
+        $('tbody').append(
+            "<tr class=" + cClass + ">" +
+            "<td>" + cContact.FirstName + "</td>" +
+            "<td>" + cContact.FavoriteSeries + "</td>");
+    });
+
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+});
+
+
+
+
